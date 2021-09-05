@@ -16,10 +16,11 @@ use FintechSystems\VirtualminApi\Facades\VirtualminApi;
 */
 
 Route::get('/', function () {
+    
     // $jokes = new JokeFactory();
 
     dd(VirtualminApi::getDomains());
-    
+
     return view('welcome', [
         // 'joke'=> $jokes->getRandomJoke()
         'domains'=> VirtualminApi::getDomains()
