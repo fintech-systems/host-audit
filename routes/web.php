@@ -1,8 +1,8 @@
 <?php
 
+use FintechSystems\VirtualminApi\Facades\VirtualminApi;
 use Illuminate\Support\Facades\Route;
 use Mpociot\ChuckNorrisJokes\JokeFactory;
-use FintechSystems\VirtualminApi\Facades\VirtualminApi;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +16,13 @@ use FintechSystems\VirtualminApi\Facades\VirtualminApi;
 */
 
 Route::get('/', function () {
-    
+
     // $jokes = new JokeFactory();
 
     dd(VirtualminApi::getDomains());
 
     return view('welcome', [
         // 'joke'=> $jokes->getRandomJoke()
-        'domains'=> VirtualminApi::getDomains()
+        'domains'=> VirtualminApi::getDomains(),
     ]);
 });
